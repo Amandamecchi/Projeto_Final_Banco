@@ -1,3 +1,5 @@
+CREATE DATABASE portaldenoticias;
+
 CREATE TABLE cadastro(
     id SERIAL PRIMARY KEY,
     nome_completo VARCHAR(100),
