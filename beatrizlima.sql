@@ -46,3 +46,13 @@ INSERT INTO entrevistas(nome_entrevistado, titulo_entrevista, descricao_entrevis
 ('Alessandra', 'Entrevista - Educação Física - Alessandra', 'Nesta entrevista, a professora de Educação Física Alessandra compartilha sua trajetória acadêmica e profissional.', '2024-11-24', 'Professora de Educação Física', 'https://www.youtube.com/embed/iMePkKPq_vc?si=OFDwe2gnHrK3Clh7'),
 ('Isabela', 'Entrevista - Artes', 'Nesta entrevista, a professora Isabela explica como a disciplina e organização nos estudos podem ser aliadas na preparação para o ENEM e vestibulares.', '2024-11-24', 'Professora de Artes', 'https://www.youtube.com/embed/HC2Q4Y4y6U4?si=axW7DNIXNnW7ojFN'),
 ('Iara Lage', 'Entrevista - Artes', 'Nesta entrevista, a professora Iara Lage compartilha o que o inspirou a seguir essa carreira, os desafios enfrentados durante a formação e as experiências marcantes da graduação. ', '2024-11-24', 'Professora de Artes', 'https://www.youtube.com/embed/0oY_W0n0eWo?si=dgq9-ypKvNi4iQc-');
+
+INSERT INTO autores(nome_autor) VALUES 
+('Camila Boehm'),
+('Ana Beatriz Dias'),
+('Barbie Latza Nadeau'),
+('Fernanda Pinotti'),
+('Da CNN'),
+('Do R7'),
+('Bruna Barone'),
+('Redação');
