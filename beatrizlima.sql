@@ -1,14 +1,19 @@
 CREATE DATABASE portaldenoticias;
 
+CREATE TABLE autores (
+    id_autor SERIAL PRIMARY KEY,
+    nome_autor VARCHAR(100) NOT NULL,
+)
+
 CREATE TABLE noticias (
     id_noticia SERIAL PRIMARY KEY,
-    id_autor SERIAL PRIMARY KEY, //FK
     titulo_noticia VARCHAR(100),
     subtitulo_noticia TEXT,
     texto_noticia TEXT,
     categoria VARCHAR(20),
     datap_noticia DATE,
-    url_imagem VARCHAR(200)
+    url_imagem VARCHAR(200),
+    CONSTRAINT fk_autor FOREIGN KEY (id_autor) REFERENCES autores(id_autor)
 );
 
 CREATE TABLE entrevistas (
@@ -26,4 +31,4 @@ CREATE TABLE sobre_nos (
     foto_integrante VARCHAR(200),
     funcao_scrum VARCHAR(15),
     email_integrante VARCHAR(200)
-)
+);
