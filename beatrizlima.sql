@@ -29,13 +29,13 @@ CREATE TABLE noticias (
     titulo_noticia VARCHAR(100),
     subtitulo_noticia TEXT,
     texto_noticia TEXT,
-    categoria VARCHAR(20),
+    area VARCHAR(20),
     datap_noticia DATE,
     url_imagem VARCHAR(200),
     CONSTRAINT fk_autor FOREIGN KEY (id_autor) REFERENCES autores(id_autor)
 );
 
-INSERT INTO noticias(id_autor, titulo_noticia, subtitulo_noticia, texto_noticia, categoria, datap_noticia, url_imagem) VALUES
+INSERT INTO noticias(id_autor, titulo_noticia, subtitulo_noticia, texto_noticia, area, datap_noticia, url_imagem) VALUES
 (9, 'Exposição no Museu do Ipiranga mostra efeitos da emergência climática no Brasil', '"Onde há fumaça: arte e emergência climática" conta com releitura do quadro "Independência ou Morte", de Pedro Américo', 'Nova exposição no Museu do Ipiranga, localizado na capital paulista, aborda emergência climática e dá visibilidade ao processo de degradação ambiental e social ao longo do desenvolvimento do Brasil. A mostra “Onde há fumaça: arte e emergência climática”, que foi aberta na terça-feira (5), propõe diálogo entre peças do acervo e obras contemporâneas, questionando o modelo de progresso do país.
 Segundo o curador Vítor Lagoeiro, a exposição se propõe a olhar para o acervo do museu e entender como aquelas imagens já dão alguns indícios de como o país chegou ao cenário atual. “Muito do que a gente tem ali no museu são imagens que celebram uma forma de ocupação do território que foi muito pautada pelo latifúndio, trabalho escravo e pela monocultura. Estes são três pilares que contribuem para inaugurar a degradação ambiental que acontece no Brasil há tantos séculos”, disse à Agência Brasil.
 Lagoeiro ressalta que o nome da exposição foi uma coincidência em relação às queimadas que atingiram o país neste ano. Na verdade, a origem do título remonta às situações retratadas nas antigas obras que já apontavam para um desfecho negativo. “O carro de boi puxando os troncos derrubados da floresta [na obra de Pedro Américo] já é um indício de uma devastação. Este é um exemplo muito bom do que foi o nosso exercício curatorial”, afirmou.
@@ -121,14 +121,15 @@ CREATE TABLE entrevistas (
     titulo_entrevista VARCHAR(100),
     datap_entrevista DATE,
     cargo_entrevistado VARCHAR(100),
-    url_video VARCHAR(200)
+    url_video VARCHAR(200),
+    area VARCHAR(20)
 );
 
-INSERT INTO entrevistas(nome_entrevistado, titulo_entrevista, datap_entrevista, cargo_entrevistado, url_video) VALUES
-('Pierre Ferreira', 'Entrevista para escola sobre a profissão', '2024-11-22', 'Treinador Físico Comportamental', 'https://www.youtube.com/embed/xmDCLzBKRis?si=JU1HUQzniVWUgqDp'),
-('Alessandra', 'Entrevista - Educação Física - Alessandra', '2024-11-24', 'Professora de Educação Física', 'https://www.youtube.com/embed/iMePkKPq_vc?si=OFDwe2gnHrK3Clh7'),
-('Isabela', 'Entrevista - Artes', '2024-11-24', 'Professora de Artes', 'https://www.youtube.com/embed/HC2Q4Y4y6U4?si=axW7DNIXNnW7ojFN'),
-('Iara Lage', 'Entrevista - Artes', '2024-11-24', 'Professora de Artes', 'https://www.youtube.com/embed/0oY_W0n0eWo?si=dgq9-ypKvNi4iQc-');
+INSERT INTO entrevistas(nome_entrevistado, titulo_entrevista, datap_entrevista, cargo_entrevistado, url_video, area) VALUES
+('Pierre Ferreira', 'Entrevista para escola sobre a profissão', '2024-11-22', 'Treinador Físico Comportamental', 'https://www.youtube.com/embed/xmDCLzBKRis?si=JU1HUQzniVWUgqDp', 'Educação Física'),
+('Alessandra', 'Entrevista - Educação Física - Alessandra', '2024-11-24', 'Professora de Educação Física', 'https://www.youtube.com/embed/iMePkKPq_vc?si=OFDwe2gnHrK3Clh7', 'Artes'),
+('Isabela', 'Entrevista - Artes', '2024-11-24', 'Professora de Artes', 'https://www.youtube.com/embed/HC2Q4Y4y6U4?si=axW7DNIXNnW7ojFN', 'Artes'),
+('Iara Lage', 'Entrevista - Artes', '2024-11-24', 'Professora de Artes', 'https://www.youtube.com/embed/0oY_W0n0eWo?si=dgq9-ypKvNi4iQc-', 'Artes');
 
 CREATE TABLE integrantes (
     id_integrante SERIAL PRIMARY KEY,
