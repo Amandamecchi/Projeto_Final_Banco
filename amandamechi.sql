@@ -1,3 +1,4 @@
+-- 
 CREATE TABLE dicas (
     id_dica SERIAL PRIMARY KEY,
     titulo_principal VARCHAR(250),
