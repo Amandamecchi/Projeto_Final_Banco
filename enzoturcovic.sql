@@ -2,15 +2,14 @@ CREATE TABLE carreiras (
 id SERIAL PRIMARY KEY,
 area VARCHAR(50),
 titulo_principal VARCHAR(50),
-imagem_principal VARCHAR (300),
+imagem_principal TEXT,
 descricao TEXT,
 pre_requisitos TEXT,
-areas_atuacao VARCHAR(50),
-formacao_academica VARCHAR(50),
-mercado_trabalho TEXT
+areas_atuacao TEXT,
+formacao_academica TEXT,
 );
 
-INSERT INTO carreiras (area, titulo_principal, imagem_principal, descricao, pre_requisitos, areas_atuacao, formacao_academica, mercado_trabalho) VALUES
+INSERT INTO carreiras (id, area, titulo_principal, imagem_principal, descricao, pre_requisitos, areas_atuacao, formacao_academica) VALUES
 ('Artes', 'Ator', 'http://127.0.0.1:5500/Portal_Noticias/images/ator.jpg', 'A carreira de ator envolve a interpretação de personagens em diversos tipos de mídia, como cinema, teatro, televisão e até plataformas digitais. Um ator deve ser capaz de transmitir emoções, contar histórias e dar vida a roteiros e personagens através de suas habilidades físicas e vocais. A profissão exige criatividade, adaptabilidade e dedicação, já que muitas vezes os trabalhos podem ser temporários e os horários irregulares.
 
 Além da atuação, a profissão também pode incluir o trabalho em dublagem, performances em comerciais, peças publicitárias e outras formas de comunicação artística e comercial.', 'Para ingressar na carreira de ator não são exigidos diploma em curso superior ou outros pré-requisitos. Contudo, realizar cursos na área, de nível superior, técnico e livre, irá ajudar o profissional a compreender, por exemplo, técnicas de atuação essenciais para uma boa performance como ator.

@@ -25,7 +25,7 @@ INSERT INTO autores(nome_autor) VALUES
 
 CREATE TABLE noticias (
     id_noticia SERIAL PRIMARY KEY,
-    id_autor INT NOT NULL,
+    id_autor INT NOT NULL, --FK
     titulo_noticia VARCHAR(100),
     subtitulo_noticia TEXT,
     texto_noticia TEXT,
@@ -35,7 +35,70 @@ CREATE TABLE noticias (
     CONSTRAINT fk_autor FOREIGN KEY (id_autor) REFERENCES autores(id_autor)
 );
 
+
+CREATE TABLE entrevistas (
+    id_entrevista SERIAL PRIMARY KEY,
+    nome_entrevistado VARCHAR(100),
+    titulo_entrevista VARCHAR(100),
+--Exclui descrição
+    datap_entrevista DATE,
+    cargo_entrevistado VARCHAR(100),
+    url_video VARCHAR(200),
+    area VARCHAR(20)
+);
+
+
+--Alteração no nome da tabela (para ficar de acordo com o MER e DER)
+CREATE TABLE integrantes (
+    id_integrante SERIAL PRIMARY KEY,
+    nome_integrante VARCHAR(100),
+    foto_integrante VARCHAR(200),
+    funcao_scrum VARCHAR(20),
+    email_integrante VARCHAR(200)
+);
+
+INSERT INTO integrantes(nome_integrante, foto_integrante, email_integrante) VALUES
+('Amanda Gomes Mechi', '/Portal_Noticias/images/Amanda.site.jpeg', 'amanda.mechi@aluno.senai.br' ),
+('André Lucca Santos', '/Portal_Noticias/images/André.site.jpeg', 'andre.r.santos45@aluno.senai.br'),
+('Beatriz Lima', '/Portal_Noticias/images/Beatriz.site.jpeg', 'beatriz.lima14@aluno.senai.br'),
+('Enzo Alves Turcovic', '/Portal_Noticias/images/Enzo.site.jpeg', 'enzo.turcovic@aluno.senai.br'),
+('Leonardo Pedro de Oliveira', '/Portal_Noticias/images/Leonardo.site.jpeg', 'leonardo.p.oliveira12@aluno.senai.br');
+
+-- Removi a função_scrum do primeiro insert e adicionei ela como um update em nosso banco para que conseguissemos realizar 1 "UPDATE" do CRUD
+UPDATE integrantes SET funcao_scrum = 'Product Owner' WHERE nome_integrante = 'Amanda Gomes Mechi';
+UPDATE integrantes SET funcao_scrum = 'Scrum Master' WHERE nome_integrante = 'Enzo Alves Turcovic';
+UPDATE integrantes SET funcao_scrum = 'Desenvolvedora' WHERE nome_integrante = 'Beatriz Lima';
+UPDATE integrantes SET funcao_scrum = 'Desenvolvedor' WHERE nome_integrante = 'André Lucca Santos';
+UPDATE integrantes SET funcao_scrum = 'Desenvolvedor' WHERE nome_integrante = 'Leonardo Pedro de Oliveira';
+
+SELECT * FROM integrantes;
+
+
+
+INSERT INTO entrevistas(nome_entrevistado, titulo_entrevista, datap_entrevista, cargo_entrevistado, url_video, area) VALUES
+('Pierre Ferreira', 'Entrevista para escola sobre a profissão', '2024-11-22', 'Treinador Físico Comportamental', 'https://www.youtube.com/embed/xmDCLzBKRis?si=JU1HUQzniVWUgqDp', 'Educação Física'),
+('Alessandra', 'Entrevista - Educação Física - Alessandra', '2024-11-24', 'Professora de Educação Física', 'https://www.youtube.com/embed/iMePkKPq_vc?si=OFDwe2gnHrK3Clh7', 'Educação física'),
+('Isabela', 'Entrevista - Artes', '2024-11-24', 'Professora de Artes', 'https://www.youtube.com/embed/HC2Q4Y4y6U4?si=axW7DNIXNnW7ojFN', 'Artes'),
+('Iara Lage', 'Entrevista - Artes', '2024-11-24', 'Professora de Artes', 'https://www.youtube.com/embed/0oY_W0n0eWo?si=dgq9-ypKvNi4iQc-', 'Artes');
+
+SELECT * FROM entrevistas;
+
+INSERT INTO autores(nome_autor) VALUES 
+('Camila Boehm'),
+('Ana Beatriz Dias'),
+('Barbie Latza Nadeau'),
+('Fernanda Pinotti'),
+('Da CNN'),
+('Do R7'),
+('Bruna Barone'),
+('Redação');
+
+SELECT * FROM autores;
+
+INSERT INTO noticias(id_autor, titulo_noticia, subtitulo_noticia, texto_noticia, categoria, datap_noticia, url_imagem) VALUES
+
 INSERT INTO noticias(id_autor, titulo_noticia, subtitulo_noticia, texto_noticia, area, datap_noticia, url_imagem) VALUES
+
 (9, 'Exposição no Museu do Ipiranga mostra efeitos da emergência climática no Brasil', '"Onde há fumaça: arte e emergência climática" conta com releitura do quadro "Independência ou Morte", de Pedro Américo', 'Nova exposição no Museu do Ipiranga, localizado na capital paulista, aborda emergência climática e dá visibilidade ao processo de degradação ambiental e social ao longo do desenvolvimento do Brasil. A mostra “Onde há fumaça: arte e emergência climática”, que foi aberta na terça-feira (5), propõe diálogo entre peças do acervo e obras contemporâneas, questionando o modelo de progresso do país.
 Segundo o curador Vítor Lagoeiro, a exposição se propõe a olhar para o acervo do museu e entender como aquelas imagens já dão alguns indícios de como o país chegou ao cenário atual. “Muito do que a gente tem ali no museu são imagens que celebram uma forma de ocupação do território que foi muito pautada pelo latifúndio, trabalho escravo e pela monocultura. Estes são três pilares que contribuem para inaugurar a degradação ambiental que acontece no Brasil há tantos séculos”, disse à Agência Brasil.
 Lagoeiro ressalta que o nome da exposição foi uma coincidência em relação às queimadas que atingiram o país neste ano. Na verdade, a origem do título remonta às situações retratadas nas antigas obras que já apontavam para um desfecho negativo. “O carro de boi puxando os troncos derrubados da floresta [na obra de Pedro Américo] já é um indício de uma devastação. Este é um exemplo muito bom do que foi o nosso exercício curatorial”, afirmou.

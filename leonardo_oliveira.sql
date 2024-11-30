@@ -7,10 +7,14 @@ descricao TEXT
 CREATE TABLE questoes (
 id_simulado INT,
 nivel_dificuldade VARCHAR(20),
-materia VARCHAR(30),
+--troquei "materia" por 'area' p manter a padronização
+area VARCHAR(50),
 quantidade_perguntas INT,
-perguntas VARCHAR(70),
+--Em perguntas  alterei "VARCHAR" para "TEXT"
+perguntas TEXT,
 resultados INT
+--Adicionei a FK
+FOREIGN KEY (id_simulado) REFERENCES simulados(id)
 );
 
 INSERT INTO simulados (disciplina, descricao) VALUES
@@ -39,3 +43,6 @@ perguntas, resultados) VALUES
 (1, 'Médio', 'Educação Física', 1, '8. O que é luta?', 100),
 (1, 'Médio', 'Educação Física', 1, '9. o esporte-participação ou esporte popular, a manifestação ocorre no princípio do prazer lúdico, que tem como finalidade o bem-estar social dos seus participantes. Está associado intimamente com o lazer e o tempo livre e ocorre em espaços não comprometidos com o tempo e fora das obrigações da vida diária. Tem como propósitos a descontração, a diversão, o desenvolvimento pessoal e o relacionamento com as pessoas. Pode-se afirmar que o esporte-participação, por ser a dimensão social do esporte mais inter-relacionada com os caminhos democráticos, equilibra o quadro de desigualdades de oportunidades esportivas encontrado na dimensão esporte-performance. Enquanto o esporte-performance só permite sucesso aos talentos ou àqueles que tiveram condições, o esporte-participação favorece o prazer a todos que dele desejarem tomar parte. GODTSFRIEDT, J. Esporte e sua relação com a sociedade: uma síntese bibliográfica. EFDeportes, n. 142, mar. 2010. O sentido de esporte-participação construído no texto está fundamentalmente presente', 100),
 (1, 'Médio', 'Educação Física', 1, '10. A educação física é uma disciplina que trata, pedagogicamente, na escola, do conhecimento de uma área denominada', 100);
+
+
+SELECT s.disciplina, s.descricao, q.nivel_dificuldade, q.resultados FROM simulados s JOIN questoes q ON s.id_simulado;
