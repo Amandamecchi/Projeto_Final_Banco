@@ -2,12 +2,12 @@ CREATE DATABASE portaldenoticias;
 
 CREATE TABLE autores (
     id_autor SERIAL PRIMARY KEY,
-    nome_autor VARCHAR(100) NOT NULL,
+    nome_autor VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE noticias (
     id_noticia SERIAL PRIMARY KEY,
-    id_autor INT NOT NULL,
+    id_autor INT NOT NULL, --FK
     titulo_noticia VARCHAR(100),
     subtitulo_noticia TEXT,
     texto_noticia TEXT,
@@ -21,32 +21,48 @@ CREATE TABLE entrevistas (
     id_entrevista SERIAL PRIMARY KEY,
     nome_entrevistado VARCHAR(100),
     titulo_entrevista VARCHAR(100),
-    descricao_entrevista VARCHAR(200),
+--Exclui descrição
     datap_entrevista DATE,
     cargo_entrevistado VARCHAR(100),
-    url_video VARCHAR(200)
+    url_video VARCHAR(200),
+    area VARCHAR(20)
 );
 
-CREATE TABLE sobre_nos (
+
+--Alteração no nome da tabela (para ficar de acordo com o MER e DER)
+CREATE TABLE integrantes (
     id_integrante SERIAL PRIMARY KEY,
     nome_integrante VARCHAR(100),
     foto_integrante VARCHAR(200),
-    funcao_scrum VARCHAR(15),
+    funcao_scrum VARCHAR(20),
     email_integrante VARCHAR(200)
 );
 
-INSERT INTO sobre_nos(nome_integrante, foto_integrante, funcao_scrum, email_integrante) VALUES
-('Amanda Gomes Mechi', '/Portal_Noticias/images/Amanda.site.jpeg', 'Product Owner', 'amanda.mechi@aluno.senai.br' ),
-('André Lucca Santos', '/Portal_Noticias/images/André.site.jpeg', 'Desenvolvedor', 'andre.r.santos45@aluno.senai.br'),
-('Beatriz Lima', '/Portal_Noticias/images/Beatriz.site.jpeg', 'Desenvolvedora', 'beatriz.lima14@aluno.senai.br'),
-('Enzo Alves Turcovic', '/Portal_Noticias/images/Enzo.site.jpeg', 'Scrum Master', 'enzo.turcovic@aluno.senai.br'),
-('Leonardo Pedro de Oliveira', '/Portal_Noticias/images/Leonardo.site.jpeg', 'Desenvolvedor', 'leonardo.p.oliveira12@aluno.senai.br');
+INSERT INTO integrantes(nome_integrante, foto_integrante, email_integrante) VALUES
+('Amanda Gomes Mechi', '/Portal_Noticias/images/Amanda.site.jpeg', 'amanda.mechi@aluno.senai.br' ),
+('André Lucca Santos', '/Portal_Noticias/images/André.site.jpeg', 'andre.r.santos45@aluno.senai.br'),
+('Beatriz Lima', '/Portal_Noticias/images/Beatriz.site.jpeg', 'beatriz.lima14@aluno.senai.br'),
+('Enzo Alves Turcovic', '/Portal_Noticias/images/Enzo.site.jpeg', 'enzo.turcovic@aluno.senai.br'),
+('Leonardo Pedro de Oliveira', '/Portal_Noticias/images/Leonardo.site.jpeg', 'leonardo.p.oliveira12@aluno.senai.br');
 
-INSERT INTO entrevistas(nome_entrevistado, titulo_entrevista, descricao_entrevista, datap_entrevista, cargo_entrevistado, url_video) VALUES
-('Pierre Ferreira', 'Entrevista para escola sobre a profissão', 'Nesta entrevista, o treinador Pierre Ferreira compartilha os desafios e dá conselhos para futuros profissionais da área de Educação Física.', '2024-11-22', 'Treinador Físico Comportamental', 'https://www.youtube.com/embed/xmDCLzBKRis?si=JU1HUQzniVWUgqDp'),
-('Alessandra', 'Entrevista - Educação Física - Alessandra', 'Nesta entrevista, a professora de Educação Física Alessandra compartilha sua trajetória acadêmica e profissional.', '2024-11-24', 'Professora de Educação Física', 'https://www.youtube.com/embed/iMePkKPq_vc?si=OFDwe2gnHrK3Clh7'),
-('Isabela', 'Entrevista - Artes', 'Nesta entrevista, a professora Isabela explica como a disciplina e organização nos estudos podem ser aliadas na preparação para o ENEM e vestibulares.', '2024-11-24', 'Professora de Artes', 'https://www.youtube.com/embed/HC2Q4Y4y6U4?si=axW7DNIXNnW7ojFN'),
-('Iara Lage', 'Entrevista - Artes', 'Nesta entrevista, a professora Iara Lage compartilha o que o inspirou a seguir essa carreira, os desafios enfrentados durante a formação e as experiências marcantes da graduação. ', '2024-11-24', 'Professora de Artes', 'https://www.youtube.com/embed/0oY_W0n0eWo?si=dgq9-ypKvNi4iQc-');
+-- Removi a função_scrum do primeiro insert e adicionei ela como um update em nosso banco para que conseguissemos realizar 1 "UPDATE" do CRUD
+UPDATE integrantes SET funcao_scrum = 'Product Owner' WHERE nome_integrante = 'Amanda Gomes Mechi';
+UPDATE integrantes SET funcao_scrum = 'Scrum Master' WHERE nome_integrante = 'Enzo Alves Turcovic';
+UPDATE integrantes SET funcao_scrum = 'Desenvolvedora' WHERE nome_integrante = 'Beatriz Lima';
+UPDATE integrantes SET funcao_scrum = 'Desenvolvedor' WHERE nome_integrante = 'André Lucca Santos';
+UPDATE integrantes SET funcao_scrum = 'Desenvolvedor' WHERE nome_integrante = 'Leonardo Pedro de Oliveira';
+
+SELECT * FROM integrantes;
+
+
+
+INSERT INTO entrevistas(nome_entrevistado, titulo_entrevista, datap_entrevista, cargo_entrevistado, url_video, area) VALUES
+('Pierre Ferreira', 'Entrevista para escola sobre a profissão', '2024-11-22', 'Treinador Físico Comportamental', 'https://www.youtube.com/embed/xmDCLzBKRis?si=JU1HUQzniVWUgqDp', 'Educação Física'),
+('Alessandra', 'Entrevista - Educação Física - Alessandra', '2024-11-24', 'Professora de Educação Física', 'https://www.youtube.com/embed/iMePkKPq_vc?si=OFDwe2gnHrK3Clh7', 'Educação física'),
+('Isabela', 'Entrevista - Artes', '2024-11-24', 'Professora de Artes', 'https://www.youtube.com/embed/HC2Q4Y4y6U4?si=axW7DNIXNnW7ojFN', 'Artes'),
+('Iara Lage', 'Entrevista - Artes', '2024-11-24', 'Professora de Artes', 'https://www.youtube.com/embed/0oY_W0n0eWo?si=dgq9-ypKvNi4iQc-', 'Artes');
+
+SELECT * FROM entrevistas;
 
 INSERT INTO autores(nome_autor) VALUES 
 ('Camila Boehm'),
@@ -57,6 +73,8 @@ INSERT INTO autores(nome_autor) VALUES
 ('Do R7'),
 ('Bruna Barone'),
 ('Redação');
+
+SELECT * FROM autores;
 
 INSERT INTO noticias(id_autor, titulo_noticia, subtitulo_noticia, texto_noticia, categoria, datap_noticia, url_imagem) VALUES
 (9, 'Exposição no Museu do Ipiranga mostra efeitos da emergência climática no Brasil', '"Onde há fumaça: arte e emergência climática" conta com releitura do quadro "Independência ou Morte", de Pedro Américo', 'Nova exposição no Museu do Ipiranga, localizado na capital paulista, aborda emergência climática e dá visibilidade ao processo de degradação ambiental e social ao longo do desenvolvimento do Brasil. A mostra “Onde há fumaça: arte e emergência climática”, que foi aberta na terça-feira (5), propõe diálogo entre peças do acervo e obras contemporâneas, questionando o modelo de progresso do país.

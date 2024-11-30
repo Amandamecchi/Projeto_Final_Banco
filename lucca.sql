@@ -1,9 +1,8 @@
 CREATE TABLE Usuario (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     senha VARCHAR(255) NOT NULL
-    dataCadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 
@@ -28,3 +27,5 @@ INSERT INTO Usuario (nome, email, senha) VALUES ('Ruby', 'ruby@gmail.com', 'pass
 INSERT INTO Usuario (nome, email, senha) VALUES ('Sam', 'sam@gmail.com', 'password19');
 INSERT INTO Usuario (nome, email, senha) VALUES ('Tina', 'tina@gmail.com', 'password20');
 INSERT INTO Usuario (nome, email, senha) VALUES ('Lucca', 'lucca@gmail.com','password21');
+
+SELECT * FROM usuario;
