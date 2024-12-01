@@ -7,6 +7,7 @@ descricao TEXT,
 pre_requisitos TEXT,
 areas_atuacao TEXT,
 formacao_academica TEXT,
+mercado_trabalho
 );
 
 INSERT INTO carreiras (id, area, titulo_principal, imagem_principal, descricao, pre_requisitos, areas_atuacao, formacao_academica) VALUES

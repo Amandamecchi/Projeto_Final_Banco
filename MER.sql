@@ -78,3 +78,10 @@ questoes
     perguntas TEXT 
     resultados INT
 
+--RELACIONAMENTOS 
+
+- Autores e Notícias (1:N)
+Um autor pode escrever várias notícias, mas cada notícia pertence a um único autor.
+
+- Simulados e Questões (1:N)
+Cada simulado pode conter várias questões, mas cada questão pertence a um simulado.
