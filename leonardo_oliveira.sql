@@ -7,22 +7,21 @@ descricao TEXT
 CREATE TABLE questoes (
 id_simulado INT,
 nivel_dificuldade VARCHAR(20),
---troquei "materia" por 'area' p manter a padronização
 area VARCHAR(50),
 quantidade_perguntas INT,
---Em perguntas  alterei "VARCHAR" para "TEXT"
 perguntas TEXT,
 resultados INT
---Adicionei a FK
-FOREIGN KEY (id_simulado) REFERENCES simulados(id)
 );
+
+
+FOREIGN KEY (id_simulado) REFERENCES simulados(id)
+
 
 INSERT INTO simulados (disciplina, descricao) VALUES
 ('Educação Física', 'Conhecimentos Gerais'),
 ('Artes', 'Conhecimentos Gerais');
 
-INSERT INTO questoes (id_simulado, nivel_dificuldade, materia, quantidade_perguntas
-perguntas, resultados) VALUES
+INSERT INTO questoes (id_simulado, nivel_dificuldade, materia, quantidade_perguntas, perguntas, resultados) VALUES
 (2, 'Médio', 'Artes', 1, '1. Quais são as 4 linguagens de Artes, nas redes de ensino', 100),
 (2, 'Médio', 'Artes', 1, '2. São consideradas cores primárias', 100),
 (2, 'Médio', 'Artes', 1, '3. Manifesto artístico pertencente às vanguardas européias do século XX, cujo lema era: "a destruição também é criação". Foi considerado o movimento propulsor das ideias surrealistas e tinha um caráter ilógico, anti-racionalista e de protesto', 100),
