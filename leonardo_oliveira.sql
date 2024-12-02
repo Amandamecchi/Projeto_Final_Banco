@@ -5,16 +5,15 @@ descricao TEXT
 );
 
 CREATE TABLE questoes (
-id_simulado INT,
+id_simulado INT NOT NULL,
 nivel_dificuldade VARCHAR(20),
 area VARCHAR(50),
 quantidade_perguntas INT,
 perguntas TEXT,
 resultados INT
+CONSTRAINT fk_simulado FOREIGN KEY (id_simulado) REFERENCES simulados(id)
 );
 
-
---FOREIGN KEY (id_simulado) REFERENCES simulados(id)
 
 
 INSERT INTO simulados (disciplina, descricao) VALUES
