@@ -14,14 +14,14 @@ resultados INT
 );
 
 
-FOREIGN KEY (id_simulado) REFERENCES simulados(id)
+--FOREIGN KEY (id_simulado) REFERENCES simulados(id)
 
 
 INSERT INTO simulados (disciplina, descricao) VALUES
 ('Educação Física', 'Conhecimentos Gerais'),
 ('Artes', 'Conhecimentos Gerais');
 
-INSERT INTO questoes (id_simulado, nivel_dificuldade, materia, quantidade_perguntas, perguntas, resultados) VALUES
+INSERT INTO questoes (id_simulado, nivel_dificuldade, area, quantidade_perguntas, perguntas, resultados) VALUES
 (2, 'Médio', 'Artes', 1, '1. Quais são as 4 linguagens de Artes, nas redes de ensino', 100),
 (2, 'Médio', 'Artes', 1, '2. São consideradas cores primárias', 100),
 (2, 'Médio', 'Artes', 1, '3. Manifesto artístico pertencente às vanguardas européias do século XX, cujo lema era: "a destruição também é criação". Foi considerado o movimento propulsor das ideias surrealistas e tinha um caráter ilógico, anti-racionalista e de protesto', 100),
@@ -44,4 +44,4 @@ INSERT INTO questoes (id_simulado, nivel_dificuldade, materia, quantidade_pergun
 (1, 'Médio', 'Educação Física', 1, '10. A educação física é uma disciplina que trata, pedagogicamente, na escola, do conhecimento de uma área denominada', 100);
 
 
-SELECT s.disciplina, s.descricao, q.nivel_dificuldade, q.resultados FROM simulados s JOIN questoes q ON s.id_simulado;
+SELECT s.disciplina, s.descricao, q.nivel_dificuldade, q.resultados FROM simulados s JOIN questoes q ON s.id= q.id_simulado;

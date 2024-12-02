@@ -40,7 +40,6 @@ CREATE TABLE entrevistas (
     id_entrevista SERIAL PRIMARY KEY,
     nome_entrevistado VARCHAR(100),
     titulo_entrevista VARCHAR(100),
---Exclui descrição
     datap_entrevista DATE,
     cargo_entrevistado VARCHAR(100),
     url_video VARCHAR(200),
