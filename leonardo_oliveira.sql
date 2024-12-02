@@ -14,7 +14,7 @@ resultados INT
 );
 
 
-FOREIGN KEY (id_simulado) REFERENCES simulados(id)
+--FOREIGN KEY (id_simulado) REFERENCES simulados(id)
 
 
 INSERT INTO simulados (disciplina, descricao) VALUES

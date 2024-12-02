@@ -22,12 +22,12 @@ Este projeto tem como objetivo desenvolver e documentar um banco de dados para u
 
 ## Papel de cada Integrante
 
-*Amanda Mechi:* Responsável pela criação do Fluxograma do projeto, Modelo de entidade e relacionamento, participação no Diagrama de entidade e relacionamento, criação da tabela "dicas".
+**Amanda Mechi:** Responsável pela elaboração do fluxograma do projeto, pelo modelo de entidade e relacionamento, pela colaboração na construção do diagrama de entidade e relacionamento, bem como pela criação da tabela "dicas".  
 
-*André Santos:* Responsável pela  criação da tabela "usuarios", participação no Diagrama de entidade e relacionamento. 
+**André Santos:** Responsável pela criação da tabela "usuarios" e pela participação no desenvolvimento do diagrama de entidade e relacionamento.  
 
-*Betriz Lima:* Responsável pela criação da DATABASE e das seguintes tabelas "autores", "noticias", "entrevistas" e "integrantes", criação e participação do Diagrama de entidade e relacionamento.
+**Betriz Lima:** Responsável pela criação da base de dados (DATABASE) e das tabelas "autores", "noticias", "entrevistas" e "integrantes", além de atuar na elaboração e no desenvolvimento do diagrama de entidade e relacionamento.  
 
-*Enzo Turcovic:* Responsável pela criação da tabela "carreiras", participação no Diagrama de entidade e relacionamento.
+**Enzo Turcovic:** Responsável pela criação da tabela "carreiras" e pela colaboração na elaboração do diagrama de entidade e relacionamento.  
 
-*Leonardo Oliveira:* Responsável pela criação da tabela "simualados", participação no Diagrama de entidade e relacionamento
+**Leonardo Oliveira:** Responsável pela criação da tabela "simualados",  e pela participação na elaboração do Diagrama de entidade e relacionamento.
