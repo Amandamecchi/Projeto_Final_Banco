@@ -31,3 +31,15 @@ Este projeto tem como objetivo desenvolver e documentar um banco de dados para u
 **Enzo Turcovic:** Responsável pela criação da tabela "carreiras" e pela colaboração na elaboração do diagrama de entidade e relacionamento.  
 
 **Leonardo Oliveira:** Responsável pela criação da tabela "simualados",  e pela participação na elaboração do Diagrama de entidade e relacionamento.
+
+#MER 
+**Entidades**
+TABLE entrevistas
+TABLE integrantes
+TABLE noticias
+TABLE autores
+TABLE dicas
+TABLE carreiras
+TABLE usuarios
+TABLE simulados
+TABLE questoes
