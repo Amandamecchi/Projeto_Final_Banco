@@ -32,7 +32,8 @@ Este projeto tem como objetivo desenvolver e documentar um banco de dados para u
 
 **Leonardo Oliveira:** Responsável pela criação da tabela "simualados",  e pela participação na elaboração do Diagrama de entidade e relacionamento.
 
-#MER 
+## MER 
+
 **Entidades**
 TABLE entrevistas
 TABLE integrantes
@@ -43,3 +44,21 @@ TABLE carreiras
 TABLE usuarios
 TABLE simulados
 TABLE questoes
+
+- Atributos
+  - entrevistas
+   id_entrevista SERIAL PRIMARY KEY
+
+ nome_entrevistado VARCHAR(100)
+
+ datap_entrevista DATE 
+
+ cargo_entrevistado VARCHAR(100)
+
+ url_video VARCHAR(200)
+
+ area VARCHAR(50)
+
+## DER
+
+![image](https://github.com/user-attachments/assets/f61be171-5228-4d62-a9f8-4da3e9ea36c6)
