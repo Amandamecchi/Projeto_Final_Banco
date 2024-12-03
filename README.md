@@ -32,7 +32,7 @@ Este projeto tem como objetivo desenvolver e documentar um banco de dados para u
 
 **Leonardo Oliveira:** Responsável pela criação da tabela "simualados",  e pela participação na elaboração do Diagrama de entidade e relacionamento.
 
-# Estrutura do Banco de Dados
+## MER
 
 ## **Entidades**
 
@@ -122,3 +122,7 @@ Este projeto tem como objetivo desenvolver e documentar um banco de dados para u
 
 ### **Simulados e Questões (1:N)**  
 - Cada simulado pode conter várias questões, mas cada questão pertence a um simulado.  
+
+## DER
+
+![image](https://github.com/user-attachments/assets/eb14d0e0-faf9-4752-9da2-ac292b6c6055)
